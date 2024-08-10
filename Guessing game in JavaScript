@@ -1,0 +1,25 @@
+// >> Guessing game
+// >> User enter the maximum number and then tries to guess a random generate number between 1 to max?
+
+const max = prompt("Enter the maximum number");
+const random = Math.floor(Math.random() * max) + 1;
+let guess = prompt("guess the number");
+
+while(true) {
+    if(guess == "quit") {
+        console.log("game quit");
+        break;
+    } 
+    if(guess == random) {
+        console.log("you are right! congrats!!  random number was", random);
+        break;
+    }
+    else if(guess < random) {
+        guess = prompt("your guess number is very small! please try again");
+    } else {
+        guess = prompt("your guess number is too large! please try again")
+    }
+    //  else {
+    //     guess = prompt("you guess was wrong! please try again!!")
+    // }
+}
